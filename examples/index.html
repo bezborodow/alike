@@ -10,7 +10,8 @@
  */
 import TableCellsAlike from '../index.js';
 const alike = new TableCellsAlike({
-
+    highlightClass: 'alike',
+    scopeSelector: 'th.highlight-alike',
 });
 alike.attach(document);
 
@@ -18,14 +19,15 @@ alike.attach(document);
 
 <style>
 .alike {
-    color: aliceblue;
+    color: darkblue;
+    background: aliceblue;
 }
 </style>
 
 </head>
 <body>
 
-<table>
+<table cellspacing="10" cellpadding="5">
     <thead>
         <tr>
             <th scope="col">Project Code</th>
@@ -49,7 +51,7 @@ alike.attach(document);
         </tr>
         <tr>
             <th scope="row">NXI1024</th>
-            <td>Chassis Manufacture Airframe VVN-20003-82 Type II</td>
+            <td>Chassis Manufacture Airframe VVN-20002-82 Type II</td>
             <td>NXI</td>
             <td>Conway</td>
         </tr>

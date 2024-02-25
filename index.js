@@ -6,7 +6,10 @@ export default class TableCellsAlike {
   #listening = [];
 
   constructor(options = {}) {
-    this.#options = Object.assign({}, options);
+    this.#options = Object.assign({
+      highlightClass: 'alike',
+      scopeSelector: 'th.highlight-alike',
+    }, options);
     this.#listening = [];
   }
 
@@ -23,14 +26,14 @@ export default class TableCellsAlike {
     const th = table.querySelectorAll('thead th')
       .item(index);
 
-    if (!th || !th.classList.contains('highlight-alike'))
+    if (!th || !th.matches(this.#options.scopeSelector))
       return;
 
     if (!this.#listening.includes(e.target)) {
       this.#listening.push(e.target);
       e.target.addEventListener('mouseleave', e => {
         for (const td of table.querySelectorAll('td'))
-          td.classList.remove('alike');
+          td.classList.remove(this.#options.highlightClass);
       });
     }
 
@@ -40,7 +43,10 @@ export default class TableCellsAlike {
       if (!td.textContent.trim())
         continue;
       if (td.textContent == e.target.textContent)
-        td.classList.add('alike');
+        td.classList.add(this.#options.highlightClass);
     }
+  }
+  onMouseLeave(e) {
+
   }
 }
