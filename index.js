@@ -31,10 +31,7 @@ export default class TableCellsAlike {
 
     if (!this.#listening.includes(e.target)) {
       this.#listening.push(e.target);
-      e.target.addEventListener('mouseleave', e => {
-        for (const td of table.querySelectorAll('td'))
-          td.classList.remove(this.#options.highlightClass);
-      });
+      e.target.addEventListener('mouseleave', this.onMouseLeave.bind(this));
     }
 
     for (const td of table.querySelectorAll('td')) {
@@ -46,7 +43,12 @@ export default class TableCellsAlike {
         td.classList.add(this.#options.highlightClass);
     }
   }
-  onMouseLeave(e) {
 
+  onMouseLeave(e) {
+    const table = e.target.closest('table');
+
+    for (const td of table.querySelectorAll('td')) {
+      td.classList.remove(this.#options.highlightClass);
+    }
   }
 }
