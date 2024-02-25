@@ -1,6 +1,7 @@
 # Highlight Alike Cells in a Table
 
 [Example.](https://bezborodow.github.io/alike/examples/)
+
 Installation:
 
 ```console
