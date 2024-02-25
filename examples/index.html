@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Alike</title>
+<script src="../index.js" type="module"></script>
+<script type="module">
+
+/**
+ * Highlight alike table cells.
+ */
+import TableCellsAlike from '../index.js';
+alike = new TableCellsAlike({
+
+});
+alike.attach(document);
+
+</script>
+
+<style>
+.alike {
+    color: aliceblue;
+}
+</style>
+
+</head>
+<body>
+
+<table>
+    <thead>
+        <tr>
+            <th scope="col">Project Code</th>
+            <th scope="col">Project Name</th>
+            <th scope="col" class="highlight-alike">Account</th>
+            <th scope="col" class="highlight-alike">Assignee</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">ADJ1001</th>
+            <td>Aircraft Manufacture KL-201-H</td>
+            <td>ADJ</td>
+            <td>Damien</td>
+        </tr>
+        <tr>
+            <th scope="row">ADJ1002</th>
+            <td>Aircraft Manufacture KJV-23L</td>
+            <td>ADJ</td>
+            <td>Conway</td>
+        </tr>
+        <tr>
+            <th scope="row">NXI1024</th>
+            <td>Chassis Manufacture Airframe VVN-20003-82 Type II</td>
+            <td>NXI</td>
+            <td>Conway</td>
+        </tr>
+        <tr>
+            <th scope="row">GOD1901</th>
+            <td>Landing Gear Assembly VVN-29912-01</td>
+            <td>GOD</td>
+            <td>Damien</td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
