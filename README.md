@@ -11,6 +11,6 @@ Usage:
  * Highlight alike table cells.
  */
 import TableCellsAlike from 'table-cells-alike';
-alike = new TableCellsAlike();
+const alike = new TableCellsAlike();
 alike.attach(document);
 ```
